@@ -1,0 +1,31 @@
+:root{--bg:#F6F5F2;--card:#FFFFFF;--ink:#16151C;--muted:#6B6A75;--line:#E7E5E0;--pink:#F2689F;--pink-soft:#FDE8F1}
+@media (prefers-color-scheme:dark){:root{--bg:#000;--card:#111114;--ink:#F4F3F7;--muted:#9C9BA6;--line:#232329;--pink:#F57FB3;--pink-soft:#2A1420}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:40px 20px 80px}
+header{display:flex;align-items:center;gap:14px;margin-bottom:36px}
+header img{width:52px;height:52px;border-radius:12px}
+header a{color:inherit;text-decoration:none;font-weight:800;font-size:22px;letter-spacing:-.01em}
+nav{margin-left:auto;display:flex;gap:6px}
+nav a{font-size:15px;font-weight:600;color:var(--muted);padding:7px 14px;border-radius:999px}
+nav a.on{background:var(--pink-soft);color:var(--pink)}
+h1{font-size:clamp(32px,6vw,46px);line-height:1.1;letter-spacing:-.025em;margin:0 0 12px;font-weight:800}
+.lead{color:var(--muted);font-size:19px;margin:0 0 32px}
+h2{font-size:21px;letter-spacing:-.01em;margin:40px 0 10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px 24px;margin:14px 0}
+.contact{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--pink);color:#fff;text-decoration:none;font-weight:700;padding:12px 22px;border-radius:999px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 20px;margin:10px 0}
+summary{cursor:pointer;font-weight:650;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;color:var(--pink);font-weight:700}
+details[open] summary::after{content:"–"}
+details p,details ul{color:var(--muted);margin:10px 0 0}
+p,li{color:var(--ink)}
+.muted{color:var(--muted)}
+ul{padding-left:20px}
+a{color:var(--pink)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+td,th{text-align:left;padding:10px 8px;border-top:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600}
+footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
