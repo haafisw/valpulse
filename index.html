@@ -2,64 +2,256 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ValPulse Support</title>
-<meta name="description" content="Help and contact for ValPulse, the ad-free companion app for your game account.">
-<link rel="icon" href="icon.png">
-<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ValPulse: Your game account, beautifully organised</title>
+<meta name="description" content="ValPulse is a companion app for players of Riot Games' tactical shooter: your daily shop as mystery boxes, share cards, collection value, battle pass, matches and live lobby — free, with no ads and no data collected.">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#060507" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="ValPulse: Your game account, beautifully organised">
+<meta property="og:description" content="Your daily shop, unboxed. Share cards, collection value, battle pass and matches — free on iPhone.">
+<meta property="og:image" content="https://haafisw.github.io/valpulse/assets/valpulse-film.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23F9A2C8%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23E5508F%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2228%22%20fill%3D%22url(%23g)%22/%3E%3Cpath%20d%3D%22M18%2036H31L46%2073L57%2044L63%2056L72%2036H82%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%229%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
-<div class="wrap">
-<header>
-  <img src="icon.png" alt="">
-  <a href="./">ValPulse</a>
-  <nav><a class="on" href="./">Support</a><a href="privacy.html">Privacy</a></nav>
+
+<!-- Shared gradient for every ValPulse mark on the page -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="vpg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f9a2c8"/><stop offset="1" stop-color="#e5508f"/></linearGradient></defs></svg>
+<template id="markTpl"><svg viewBox="0 0 100 100" aria-hidden="true"><rect class="tile-bg" width="100" height="100" rx="28" fill="url(#vpg)"/><path class="pulse" pathLength="1" d="M18 36H31L46 73L57 44L63 56L72 36H82" fill="none" stroke="#fff" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/></svg></template>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="mark" data-mark style="width:28px;height:28px"></span>ValPulse</a>
+    <nav class="nav-links">
+      <a href="#film">Film</a><a href="#how">The shop</a><a href="#features">Features</a><a href="#free">Free</a><a href="#support">Support</a>
+    </nav>
+    <a class="btn btn-ink btn-sm" href="https://apps.apple.com/app/id6834613024">Get ValPulse</a>
+  </div>
 </header>
 
-<h1>How can we help?</h1>
-<p class="lead">Answers to common questions about ValPulse. If yours isn't here, send us an email and we'll get back to you, usually within two days.</p>
+<main id="top">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="rings" aria-hidden="true" style="top:250px">
+      <span style="width:220px;height:220px"></span><span style="width:340px;height:340px;animation-delay:.6s"></span><span style="width:480px;height:480px;animation-delay:1.2s"></span>
+    </div>
+    <div class="wrap">
+      <span class="mark" id="heroMark" data-mark></span>
+      <h1 class="display words" data-words>Your game account, <span class="accent">beautifully</span> organised.</h1>
+      <p class="lede rv" style="--d:.35s">Your daily shop as mystery boxes, share cards that flex your collection, and every match, medal and battle pass level — in one calm app.</p>
+      <div class="cta rv" style="--d:.5s">
+        <a class="btn btn-ink" href="https://apps.apple.com/app/id6834613024"><svg width="16" height="18" viewBox="0 0 16 18" fill="currentColor" aria-hidden="true"><path d="M13.3 9.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.9-.9-3.1-.8C3.7 4.4 2.2 5.3 1.4 6.8c-1.7 2.9-.4 7.2 1.2 9.6.8 1.2 1.7 2.4 2.9 2.4 1.2-.1 1.6-.8 3-.8s1.8.8 3.1.7c1.3 0 2.1-1.2 2.9-2.3.9-1.3 1.3-2.6 1.3-2.7 0 0-2.5-1-2.5-4.1zM11 2.6c.6-.8 1.1-1.8 1-2.8-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.7-1 2.7 1 .1 2-.5 2.7-1.3z"/></svg>Download on the App Store</a>
+        <a class="btn btn-ghost" href="#film">Watch the film <span class="arr">→</span></a>
+      </div>
+      <p class="note rv" style="--d:.6s">Free · No ads · No account data collected · iPhone, iOS 16 and later</p>
+    </div>
 
-<div class="card contact">
-  <div><strong>Email support</strong><br><span class="muted">valpulse.app@gmail.com</span></div>
-  <a class="btn" href="mailto:valpulse.app@gmail.com?subject=ValPulse%20support">Send an email</a>
-</div>
+    <div class="stage" id="stage">
+      <div class="phone p-left sheet" data-par="-0.10" data-img="assets/n-share-collection.jpg"></div>
+      <div class="phone p-center" data-par="0" data-img="assets/n-store.jpg"></div>
+      <div class="phone p-right" data-par="-0.10" data-img="assets/r-profile.jpg"></div>
+      <div class="chip" data-par="-0.22" style="left:calc(50% - 480px);top:470px">
+        <span class="ico pink"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-9.5-9.3C1.1 8.4 3.2 4.8 6.8 4.8c2 0 3.5 1.1 4.3 2.4h1.8c.8-1.3 2.3-2.4 4.3-2.4 3.6 0 5.7 3.6 4.3 6.9C19.5 16.4 12 21 12 21z"/></svg></span>
+        <span><b>Wishlist skin in your shop</b><small>Today's Exclusive offer</small></span>
+      </div>
+      <div class="chip" data-par="-0.30" style="left:calc(50% + 230px);top:300px">
+        <span class="ico pos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16l5-5 4 4 7-8"/><path d="M15 7h5v5"/></svg></span>
+        <span><b>+24 RR · Match MVP</b><small>Competitive on Corrode</small></span>
+      </div>
+    </div>
+  </section>
 
-<h2>Signing in</h2>
-<details><summary>Is it safe to sign in?</summary>
-<p>Yes. You sign in on Riot Games' own page (auth.riotgames.com), shown inside the app. Your password goes straight to Riot and never reaches ValPulse. The app keeps only Riot's session cookie on your device so you stay signed in.</p></details>
-<details><summary>Do I need to sign in to try the app?</summary>
-<p>No. On the first screen, tap <strong>Look around with sample data</strong> to explore every screen with a sample account.</p></details>
-<details><summary>Sign-in keeps failing or asks for a code</summary>
-<p>If Riot asks for a two-factor code, enter the code Riot emailed you on the same page. If sign-in still fails, check your connection, wait a minute and try again. Riot sometimes limits repeated sign-in attempts for a short time.</p></details>
-<details><summary>How do I add another account or remove one?</summary>
-<p>Tap your account at the top of any screen. You can add up to five accounts, switch between them in one tap, or sign out of one. Signing out deletes that account's session from your device.</p></details>
+  <!-- Film -->
+  <section class="film-sec" id="film">
+    <div class="film" id="film-frame">
+      <video id="filmVideo" src="assets/valpulse-film.mp4" poster="assets/valpulse-film.jpg" muted loop playsinline preload="metadata"></video>
+      <button class="sound" id="soundBtn" aria-label="Turn sound on">
+        <svg id="sndOff" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H3v6h3l5 4z"/><path d="M22 9l-6 6M16 9l6 6"/></svg>
+        <svg id="sndOn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" hidden><path d="M11 5L6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 010 7M19 5a10 10 0 010 14"/></svg>
+      </button>
+    </div>
+    <p class="film-cap rv">The ValPulse film · 15 seconds</p>
+  </section>
 
-<h2>Shop &amp; collection</h2>
-<details><summary>When does the daily shop refresh?</summary>
-<p>At the same moment as in the game. The countdown shows the time left, and ValPulse reloads the shop by itself when it resets.</p></details>
-<details><summary>What do Select, Deluxe, Premium, Exclusive and Ultra mean?</summary>
-<p>They're the game's skin rarities, from lowest to highest. Each mystery box shows the rarity of the skin inside before you reveal it.</p></details>
-<details><summary>Is the collection value exact?</summary>
-<p>It's an estimate based on the usual store price of each skin. Skins from the battle pass, events or bundles that are no longer sold may be valued differently from what you paid.</p></details>
-<details><summary>Does swapping a buddy or applying a preset change my game?</summary>
-<p>Yes. It edits your own cosmetic loadout, exactly as you could inside the game. The change appears the next time the game loads your loadout.</p></details>
-<details><summary>Where is my shop history kept?</summary>
-<p>Only on your device. It starts from the first day you open ValPulse and is kept separately for each account.</p></details>
+  <!-- Story: the daily shop unboxes as you scroll -->
+  <section class="story" id="how">
+    <div class="pin">
+      <div>
+        <p class="eyebrow rv">The daily shop</p>
+        <h2 class="display rv" style="--d:.1s">Your daily shop, <span class="accent">unboxed.</span></h2>
+        <p class="lede rv" style="--d:.2s;margin-top:22px">Every offer starts face down, showing only its rarity. Tap — or keep scrolling — and watch each skin reveal itself, with its price, its clip and a heart if it's on your wishlist.</p>
+        <div class="count rv" style="--d:.3s">
+          <div><b id="cOpen">0 / 4</b><span>Boxes opened</span></div>
+          <div><b id="cValue">0</b><span>Shop value in VP</span></div>
+          <div><b id="cReset">21:58:27</b><span>Resets in</span></div>
+        </div>
+      </div>
+      <div class="shop rv" style="--d:.15s">
+        <div class="shop-head"><span>Resets in <b id="hReset">21:58:27</b></span><span class="reveal-all">✦ Reveal all</span></div>
+        <div class="boxes" id="boxes">
+          <div class="box" data-at=".14" data-vp="2175">
+            <div class="face front"><img src="assets/tier-exclusive.png" alt=""><b>Exclusive</b><small>Tap to reveal</small></div>
+            <div class="face back"><img src="assets/skin-lev.png" alt="" loading="lazy"><div><b>VCT26 x LEV Classic</b><small><img src="assets/tier-exclusive.png" alt="" style="width:14px;height:14px">Exclusive · <i>2,175 VP</i></small></div></div>
+          </div>
+          <div class="box sel" data-at=".33" data-vp="1775">
+            <div class="face front"><img src="assets/tier-select.png" alt=""><b>Select</b><small>Tap to reveal</small></div>
+            <div class="face back"><img src="assets/skin-starlit.png" alt="" loading="lazy"><div><b>Starlit Odyssey Ghost</b><small><img src="assets/tier-select.png" alt="" style="width:14px;height:14px">Select · <i>1,775 VP</i></small></div></div>
+          </div>
+          <div class="box" data-at=".52" data-vp="4350">
+            <div class="face front"><img src="assets/tier-exclusive.png" alt=""><b>Exclusive</b><small>Tap to reveal</small></div>
+            <div class="face back"><img src="assets/skin-prosperity.png" alt="" loading="lazy"><div><b>Prosperity</b><small><img src="assets/tier-exclusive.png" alt="" style="width:14px;height:14px">Exclusive · <i>4,350 VP</i></small></div><span class="wish">♥ Wishlist</span></div>
+          </div>
+          <div class="box" data-at=".71" data-vp="4350">
+            <div class="face front"><img src="assets/tier-exclusive.png" alt=""><b>Exclusive</b><small>Tap to reveal</small></div>
+            <div class="face back"><img src="assets/skin-knife.png" alt="" loading="lazy"><div><b>Reaver Butterfly Knife</b><small><img src="assets/tier-exclusive.png" alt="" style="width:14px;height:14px">Exclusive · <i>4,350 VP</i></small></div></div>
+          </div>
+        </div>
+        <div class="burst" id="burst"></div>
+      </div>
+    </div>
+  </section>
 
-<h2>Matches</h2>
-<details><summary>A match or the live game is missing</summary>
-<p>Matches can take a few minutes to appear after they end. The live game card shows from agent select until the match finishes. To check again, use <strong>Settings › Refresh everything</strong>.</p></details>
+  <!-- Features -->
+  <section class="sec" id="features">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow rv">Features</p>
+        <h2 class="display rv" style="--d:.08s">Everything about your account.<br>Nothing in the way.</h2>
+        <p class="lede rv" style="--d:.16s">The shop, your collection, your matches and your pass — fast, clear and made with care.</p>
+      </div>
+      <div class="bento">
+        <article class="tile t-4 rv">
+          <span class="ico pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7.5 7.5L12 3l4.5 4.5"/><path d="M5 13v5a2 2 0 002 2h10a2 2 0 002-2v-5"/></svg></span>
+          <h3>Share cards worth posting.</h3>
+          <p>Your collection value, every skin by worth, or your loadout with its buddies — as a clean image in Story, Post, Square or Wide. Light or dark, glass or classic, any colour.</p>
+          <div class="cards-stack"><img src="assets/n-share-loadout.jpg" alt="" loading="lazy"><img src="assets/n-share-collection.jpg" alt="ValPulse share card" loading="lazy"></div>
+        </article>
+        <article class="tile t-2 pink rv" style="--d:.08s">
+          <span class="ico" style="background:rgba(255,255,255,.22)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.5 6.5L21 11l-6.5 2.5L12 20l-2.5-6.5L3 11l6.5-2.5z"/></svg></span>
+          <h3>Mystery boxes.</h3>
+          <p>Try one. Tap the box.</p>
+          <div class="flipdemo" id="flipDemo" role="button" tabindex="0" aria-label="Reveal the mystery box"><div class="in"><div class="f">? Tap to reveal</div><div class="b"><img src="assets/skin-prosperity.png" alt="Prosperity"></div></div></div>
+        </article>
+        <article class="tile t-3 rv">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="7" height="7" rx="2"/><rect x="14" y="4" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg></span>
+          <h3>Your collection, valued.</h3>
+          <p>Every skin, buddy, spray, card and title — sorted by value, rarity or weapon.</p>
+          <div style="margin-top:28px"><div class="big-num"><span data-count="29425">0</span><span style="font-size:.32em;letter-spacing:0;color:var(--brand);margin-left:.25em">VP</span></div><p style="margin-top:6px">estimated collection value (sample account)</p></div>
+        </article>
+        <article class="tile t-3 rv" style="--d:.08s">
+          <span class="ico gold"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5z"/></svg></span>
+          <h3>Every match, every medal.</h3>
+          <p>Scoreboards with MVPs, aces and clutches, party colours and the RR you won or lost.</p>
+          <div class="medals"><span class="mvp">♛ Match MVP</span><span class="ace">♠ Ace</span><span class="clutch">◎ Clutch</span><span class="rr">+24 RR</span></div>
+        </article>
+        <article class="tile t-2 dark rv">
+          <span class="ico" style="background:rgba(255,255,255,.12)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M5.6 5.6a9 9 0 000 12.8M18.4 5.6a9 9 0 010 12.8M8.5 8.5a5 5 0 000 7M15.5 8.5a5 5 0 010 7"/></svg></span>
+          <h3>Know your lobby.</h3>
+          <p>Both teams, agents and ranks — live from agent select.</p>
+          <div class="shot" style="width:150px;right:-30px;top:200px;transform:rotate(-8deg)"><img src="assets/r-live.jpg" alt="Live game in ValPulse" loading="lazy"></div>
+        </article>
+        <article class="tile t-4 rv" style="--d:.08s">
+          <span class="ico pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3 2"/></svg></span>
+          <h3>The rest, thought through.</h3>
+          <p>Battle pass and missions at a glance, a reminder when the shop resets, Night Market, buddies you can swap in a tap, up to five accounts — in six languages.</p>
+          <div style="display:flex;gap:40px;margin-top:26px;flex-wrap:wrap">
+            <div><div class="big-num"><span data-count="5">0</span></div><p>accounts</p></div>
+            <div><div class="big-num"><span data-count="6">0</span></div><p>languages</p></div>
+          </div>
+          <div class="langs"><span>English</span><span>Bahasa Indonesia</span><span>Español</span><span>Português</span><span>日本語</span><span>ไทย</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<h2>Something else</h2>
-<details><summary>I found a bug</summary>
-<p>Email us with your device, iOS version and what happened. A screenshot helps a lot.</p></details>
-<details><summary>Is ValPulse made by Riot Games?</summary>
-<p>No. ValPulse is an independent fan project. See the note below.</p></details>
+  <!-- Gallery -->
+  <section class="sec" style="padding-top:60px;padding-bottom:80px">
+    <div class="wrap"><div class="sec-head" style="margin-bottom:30px"><p class="eyebrow rv">A closer look</p><h2 class="display rv" style="--d:.08s">Made with care.</h2></div></div>
+    <div class="rail" id="rail">
+      <figure class="rv"><div class="phone" data-img="assets/n-store.jpg"></div><figcaption>Your daily shop, unboxed</figcaption></figure>
+      <figure class="rv" style="--d:.06s"><div class="phone sheet" data-img="assets/n-share-collection.jpg"></div><figcaption>Share cards</figcaption></figure>
+      <figure class="rv" style="--d:.12s"><div class="phone sheet" data-img="assets/r-skin.jpg"></div><figcaption>Every level and variant</figcaption></figure>
+      <figure class="rv" style="--d:.18s"><div class="phone" data-img="assets/n-skins-grid.jpg"></div><figcaption>Your arsenal, your way</figcaption></figure>
+      <figure class="rv" style="--d:.24s"><div class="phone" data-img="assets/r-pass.jpg"></div><figcaption>Battle pass at a glance</figcaption></figure>
+      <figure class="rv" style="--d:.30s"><div class="phone sheet" data-img="assets/r-match.jpg"></div><figcaption>Every match, every medal</figcaption></figure>
+      <figure class="rv" style="--d:.36s"><div class="phone sheet" data-img="assets/r-buddies.jpg"></div><figcaption>Swap buddies in a tap</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- Free -->
+  <section class="sec" id="free" style="padding-top:80px">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow rv">Pricing</p>
+        <h2 class="display rv" style="--d:.08s">Free. <span class="accent">Really.</span></h2>
+        <p class="lede rv" style="--d:.16s">No subscription, no ads, no paywall. Every feature is included for everyone.</p>
+      </div>
+      <div class="free">
+        <div class="plan rv"><span class="tag">Everything included</span><h3>ValPulse</h3><div class="price">$0</div><div class="per">for iPhone · iOS 16 and later</div><a class="btn btn-pink" href="https://apps.apple.com/app/id6834613024">Download on the App Store</a></div>
+        <ul class="checks rv" style="--d:.08s">
+          <li>Mystery shop, Night Market and bundles</li>
+          <li>Share cards in four sizes</li>
+          <li>Collection value, sort and wishlist</li>
+          <li>Matches, live lobby and battle pass</li>
+          <li>Up to five accounts</li>
+          <li>No ads, ever</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy -->
+  <section class="privacy-band" id="privacy">
+    <p class="eyebrow rv" style="color:#f9a2c8">Private by design</p>
+    <h2 class="display rv" style="--d:.08s">Your account<br>stays yours.</h2>
+    <p class="lede rv" style="--d:.16s">You sign in on Riot's own page, so your password never reaches ValPulse. Your session stays on your iPhone, your account data goes only between you and Riot, and there are no ValPulse servers at all.</p>
+    <div class="promises rv" style="--d:.24s"><span>No password stored</span><span>No analytics</span><span>No ads</span><span>Data Not Collected</span></div>
+    <p class="rv" style="--d:.3s;margin-top:34px"><a class="btn btn-ghost" style="color:#f9b8d6" href="privacy.html">Read the Privacy Policy <span class="arr">→</span></a></p>
+  </section>
+
+  <!-- Support / FAQ -->
+  <section class="sec" id="support">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:40px">
+        <p class="eyebrow rv">Support</p>
+        <h2 class="display rv" style="--d:.08s">Questions, answered.</h2>
+      </div>
+      <div class="faq rv" style="--d:.12s">
+        <details><summary>Is it safe to sign in?</summary><div class="ans"><p>Yes. You sign in on Riot Games' own page (auth.riotgames.com), shown inside the app. Your password goes straight to Riot and never reaches ValPulse. The app keeps only Riot's session on your device so you stay signed in.</p></div></details>
+        <details><summary>Can I try it without signing in?</summary><div class="ans"><p>Yes. On the first screen, tap <strong>Look around with sample data</strong> to explore every screen with a sample account.</p></div></details>
+        <details><summary>When does the daily shop refresh?</summary><div class="ans"><p>At the same moment as in the game. The countdown shows the time left, ValPulse reloads the shop by itself, and you can turn on a reminder in Settings.</p></div></details>
+        <details><summary>Is the collection value exact?</summary><div class="ans"><p>It's an estimate from each skin's usual store price. Battle pass, event and discontinued skins may be valued differently from what you paid.</p></div></details>
+        <details><summary>Does swapping a buddy change my game?</summary><div class="ans"><p>Yes. It edits your own cosmetic loadout, exactly as you could in the game. The change shows the next time the game loads your loadout.</p></div></details>
+        <details><summary>How do I add or remove an account?</summary><div class="ans"><p>Tap your account at the top of any screen. Add up to five, switch in one tap, or sign out of one — which deletes its session from your device.</p></div></details>
+        <details><summary>Is ValPulse made by Riot Games?</summary><div class="ans"><p>No. ValPulse is an independent fan project and isn't endorsed by Riot Games.</p></div></details>
+      </div>
+      <div style="text-align:center;margin-top:60px" class="rv">
+        <p class="lede" style="margin-bottom:22px">Found a bug or have an idea?</p>
+        <a class="btn btn-ink" href="mailto:valpulse.app@gmail.com?subject=ValPulse%20support">Email support</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final -->
+  <section class="final">
+    <div class="wrap">
+      <span class="mark" id="finalMark" data-mark></span>
+      <h2 class="display words" data-words>Feel the <span class="accent">pulse.</span></h2>
+      <div class="cta rv" style="--d:.3s;margin-top:40px"><a class="btn btn-ink" href="https://apps.apple.com/app/id6834613024">Download on the App Store</a></div>
+    </div>
+  </section>
+</main>
 
 <footer>
-ValPulse isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games and all associated properties are trademarks or registered trademarks of Riot Games, Inc.<br><br>
-<a href="privacy.html">Privacy Policy</a> · © 2026 ValPulse
+  <div class="wrap">
+    <p>© 2026 ValPulse · Your game account, beautifully organised.</p>
+    <nav><a href="#support">Support</a><a href="privacy.html">Privacy</a><a href="mailto:valpulse.app@gmail.com">Contact</a></nav>
+    <p class="legal">ValPulse isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games and all associated properties are trademarks or registered trademarks of Riot Games, Inc.</p>
+  </div>
 </footer>
-</div>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="site.js"></script>
 </body>
 </html>
