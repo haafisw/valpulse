@@ -11,10 +11,10 @@
   const tpl = $('#markTpl');
   $$('[data-mark]').forEach((m) => m.append(tpl.content.cloneNode(true)));
 
-  // Phones: real app captures with a clean 9:41 status bar.
+  // Phones: full real app captures, shown at their exact screen shape.
   const icons = (c) => `<span class="sb-ic"><svg width="18" height="11" viewBox="0 0 18 11" fill="${c}"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="6" rx="1"/><rect x="10" y="2.5" width="3" height="8.5" rx="1"/><rect x="15" y="0" width="3" height="11" rx="1"/></svg><svg width="16" height="11" viewBox="0 0 16 11" fill="${c}"><path d="M8 2.2c2.2 0 4.2.9 5.7 2.3l1.1-1.2A9.5 9.5 0 008 .6 9.5 9.5 0 001.2 3.3l1.1 1.2A8 8 0 018 2.2zm0 3.1c1.3 0 2.5.5 3.4 1.3l1.1-1.2A6.4 6.4 0 008 3.7a6.4 6.4 0 00-4.5 1.7l1.1 1.2A4.8 4.8 0 018 5.3zm0 3.1c.5 0 .9.2 1.2.4L8 10.2 6.8 8.8c.3-.3.7-.4 1.2-.4z"/></svg><svg width="25" height="12" viewBox="0 0 25 12"><rect x=".5" y=".5" width="21" height="11" rx="3.5" fill="none" stroke="${c}" opacity=".4"/><rect x="2" y="2" width="18" height="8" rx="2" fill="${c}"/><path d="M23 4v4a2 2 0 000-4z" fill="${c}" opacity=".4"/></svg></span>`;
   $$('.phone[data-img]').forEach((p) => {
-    p.innerHTML = `<div class="scr"><img src="${p.dataset.img}" alt="" loading="lazy" decoding="async"><div class="sb"><span>9:41</span>${icons('#15161a')}</div><div class="di"></div></div>`;
+    p.innerHTML = `<div class="scr"><img src="${p.dataset.img}" alt="" loading="lazy" decoding="async"><div class="di"></div></div>`;
   });
 
   // Headline words rise one by one.

@@ -275,3 +275,14 @@ footer .legal { flex-basis: 100%; color: var(--faint); font-size: 12px; max-widt
   .nw-peek { min-height: 560px; }
   .nw-theme-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+
+/* Phones show the whole capture at its true screen shape */
+.phone { aspect-ratio: auto; height: auto; }
+.phone .scr { height: auto; aspect-ratio: 1320 / 2868; }
+.phone .scr img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.phone .di { left: 39.17%; top: 1.46%; width: 21.67%; height: 3.77%; margin-left: 0; border-radius: 999px; }
+.nw-widget-img { border-radius: 0; background: transparent; filter: drop-shadow(0 26px 34px rgba(245,127,179,.28)); box-shadow: none; }
+.nw-tracker img { border-radius: 0; box-shadow: none; filter: drop-shadow(0 18px 28px rgba(var(--shadow),.24)); margin-bottom: 30px; }
+.nw-tracker { padding-bottom: 36px; min-height: 0; }
+.nw-forecast img { border-radius: 0; box-shadow: none; filter: drop-shadow(0 16px 22px rgba(120,20,60,.38)); }
+@media (max-width: 900px) { .nw-tracker img { border-radius: 0; margin-bottom: 4px; } }
